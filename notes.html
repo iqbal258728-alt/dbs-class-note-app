@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Note Keep</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Huge Icons -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <style type="text/css">
+        body {
+            font-family: "Plus Jakarta Sans";
+            background-color: #F8FBFC;
+        }
+
+        .container {
+            width: 390px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .judul {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .judul-teks {
+            font-weight: bold;
+        }
+
+        .judul-teks p {
+            color: #777777;
+            font-size: 10pt;
+            margin-bottom: 0;
+        }
+
+        .judul-teks h2 {
+            margin-top: 0;
+            font-size: 16pt;
+        }
+
+        .logo-keluar {
+            font-size: 30px;
+        }
+
+        .header {
+            background-color: white;
+            margin-top: 35px;
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-header span {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .logo-create {
+            font-size: 30px;
+            padding: 10px;
+            color: #19C3E6;
+        }
+
+        .input {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .input-title {
+            width: calc(100% - 23px);
+            height: 45px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 2px solid #C4C4C4;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            color: #7E7E7E;
+        }
+
+        .input-note {
+            width: calc(100% - 23px);
+            height: 100px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 8px;
+            border: 2px solid #C4C4C4;
+            color: #7E7E7E;
+            resize: vertical;
+        }
+
+        .btn-add-note {
+            background-color: #19c3e6;
+            color: white;
+            font-weight: bold;
+            border: none;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .your-notes {
+            padding-top: 15px;
+        }
+
+        .your-notes h2 {
+            font-size: 13pt;
+            font-weight: bold;
+        }
+
+        .note-slot-one {
+            background-color: white;
+            margin-bottom: 15px;
+        }
+
+        .header-slot-one {
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+        }
+
+        .left-header-slot-one {
+            padding-left: 10px;
+        }
+
+        .left-header-slot-one h3 {
+            margin-bottom: 0px;
+            margin-top: 10px;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        .left-header-slot-one label {
+            color: #4E8B97;
+            font-size: 9pt;
+        }
+
+        .right-header-slot-one {
+            padding-right: 10px;
+            font-size: 20px;
+        }
+
+        .text-slot-one {
+            padding: 10px;
+        }
+
+        .text-slot-one p {
+            font-size: 12pt;
+            text-align: left;
+        }
+
+        .note-slot-two {
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        .header-slot-two {
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+        }
+
+        .left-header-slot-two {
+            padding-left: 10px;
+        }
+
+        .left-header-slot-two h3 {
+            margin-bottom: 0px;
+            margin-top: 10px;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        .left-header-slot-two label {
+            color: #4E8B97;
+            font-size: 12pt;
+        }
+
+        .right-header-slot-two {
+            padding-right: 10px;
+            font-size: 20px;
+        }
+
+        .text-slot-two {
+            padding: 10px;
+        }
+
+        .text-slot-two p {
+            font-size: 12pt;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="judul">
+            <div class="judul-teks">
+                <p>DASHBOARD</p>
+                <h2>Hi, student@uni.edu</h2>
+            </div>
+            <i class="hgi hgi-stroke hgi-logout-circle-02 logo-keluar"></i>
+        </div>
+        <div class="header">
+            <div class="form-header">
+                <i class="hgi hgi-stroke hgi-property-edit logo-create"></i>
+                <span>Create New Note</span>
+            </div>
+            <div class="input">
+                <input id="input-title" placeholder="Note title" class="input-title">
+                <textarea id="input-note" class="input-note" placeholder="Write your thoughts here..."></textarea>
+                <button class="btn-add-note" onclick="tambahcatatan()">+ Add Note</button>
+            </div>
+        </div>
+        <div class="your-notes">
+            <h2>Your Notes</h2>
+        </div>
+        <div id="wadah">
+        </div>
+
+    </div>
+    </div>
+    <script>
+
+          let daftarcatatan = []
+
+        function tambahcatatan() {
+            //mengenali elemen html
+            let intitle = document.getElementById ("input-title")
+            let innote = document.getElementById ("input-note")
+           
+            let date = new Date(); 
+			let dd = date.getDate(); 
+			let mm = date.getMonth() + 1; 
+			let yyyy = date.getFullYear(); 
+			let newDate = dd + "-" + mm + "-" +yyyy;
+            //melihat value  dari object intitle
+            console.log(intitle.value)
+            console.log(innote.value)
+
+            let newUser = {
+                title: intitle.value,
+                note: innote.value,
+                tanggal: newDate
+            }
+
+            daftarcatatan.push(newUser)
+
+            tampilkanData()
+            
+          
+            
+        }
+          function hapuscatatan(target) {
+                daftarcatatan.splice(target,1)
+                alert('Berhasil menghapus')
+          }
+        function tampilkanData() {
+            let wadah = document.getElementById("wadah");
+
+            wadah.innerHTML = ``
+
+            for(let i = 0; i < daftarcatatan.length; i ++) {
+
+            wadah.innerHTML += `<div class="header-slot-one">
+                    <div class="left-header-slot-one">
+                        <h3>${daftarcatatan[i].title}</h3>
+                        <label>${daftarcatatan[i].tanggal}</label>
+                        
+                    </div>
+                    <div class="right-header-slot-one">
+                        <i class="hgi hgi-stroke hgi-edit-02"></i>
+                        <i class="hgi hgi-stroke hgi-delete-03" onclick="hapuscatatan(${i})" ></i>
+
+                    </div>
+                </div>
+                <div class="text-slot-one">
+                    <p>${daftarcatatan[i].note}</p>
+                </div>`
+                }
+        }
+    </script>
+</body>
+
+</html>

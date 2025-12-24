@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <style>
+        p {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .logo {
+            font-size: 20pt;
+            color: rgb(0, 0, 224);
+            background-color: aliceblue;
+            border-radius: 9px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .container >i {
+            font-size: 24px;
+            color: #19C3E6;
+        }
+        .container {
+            font-size: 14px;
+        }
+
+        .container>i {
+            font-size: 40px;
+        }
+        
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #19C3E6;
+            color: white;
+            margin: auto;
+            margin-top: 10px;
+            display: block;
+            border: 1px;
+            border-radius: 9px;
+        }
+
+        .container {
+            width: 390px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .login>input {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <i class="hgi hgi-stroke hgi-property-edit logo-create"></i>
+        <h1>Get Started</h1>
+        <p style="color: #4E8B97;"> Create a free account to save your notes and acces them anywhere</p>
+        <div class="login">
+            <label>Email Addres</label>
+            <input id="input-login" type="email" placeholder="name@gmail.com" />
+        </div>
+        <div class="login">
+            <label>Password</label>
+            <input id="input-password" type="password" placeholder="enter passsword" />
+            <p class="fp"><a href="">Don't have account</a></p>
+        </div>
+        <div class="login">
+            <label>Confirm Password</label>
+            <input type="Re- enter password" placeholder="Re- enter password" />
+        </div>
+        <button class="button" onclick="tambahuser()">Log in</button>
+        <p>
+            Don't have an account? <a href="">Sign up</a>
+        </p>
+    </div>
+
+
+    <script>
+        let users = [];
+
+        // function
+        function tambahuser() {
+            //mengenali elemen html
+            let inEmail = document.getElementById("input-login")
+            let inpassword = document.getElementById("input-password")
+            //melihat value dari object inEmail
+            console.log(inEmail.value)
+            console.log(inpassword.value)
+
+            let newUser = {
+                email: inEmail.value,
+                password: inpassword.value
+            }
+
+            saveToStorage(newUser)
+            users.push(newUser)
+
+            alert("Registrasi Berhasil")
+            window.location.href = './login.html'
+        }
+
+        function saveToStorage(datauser) {
+            let stringdatauser = JSON.stringify(datauser)
+            localStorage.setItem('user', stringdatauser)
+        }
+    </script>
+</body>
+
+</html>

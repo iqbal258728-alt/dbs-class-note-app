@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <style>
+        p {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .container {
+            width: 390px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .container {
+            font-size: 24pt;
+        }
+
+        .container {
+            font-size: 14pt;
+        }
+
+        .container>i {
+            font-size: 40pt;
+        }
+
+        .logo {
+            font-size: 20pt;
+            color: blue;
+            background-color: aliceblue;
+            border-radius: 9px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .login>input {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #19C3E6;
+            color: white;
+            margin: auto;
+            margin-top: 10px;
+            display: block;
+            border: 1px;
+        }
+
+        .fp {
+            text-align: right;
+            margin-right: 5px;
+            font-size: 10pt;
+            margin-bottom: -20px;
+            color: #4E8B97;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <i class="hgi hgi-stroke hgi-file-01 logo"></i>
+        <h1>Note Keep</h1>
+        <p style="color: #4E8B97;">your email and passsword to access your notes </p>
+        <div class="login">
+            <label>Email Addres</label>
+            <input class="input-login" type="email" placeholder="name@example.com" />
+        </div>
+        <div class="login">
+            <p class="fp">
+                <a href="">Forget Password</a>
+            </p>
+            <label>Password</label>
+            <input type="password" placeholder="enter passsword" />
+        </div>
+        <button class="button">Log in</button>
+        <p>
+            Don't have an account? <a href="https://www.youtube.com/">Sign up</a>
+        </p>
+    </div>
+
+    <script>
+
+        function login() {
+            //ambil elemen email & password dari html
+            let inEmail = document.getElementById('email')
+            let inpassword = document.getElementById('password')
+
+
+            //ambil data dari local storage
+            let userinstorage = localStorage.getItem('user')
+
+            //apakah email & passwordnya sama dengan yang di local storage
+
+            // if email == usesrDb.email
+            alert("Login Berhasil")
+        }
+
+        function getfromstorage() {
+            let userinstorage = localStorage.getItem('user')
+            return JSON.parse(userinstorage)
+        }
+    </script>
+</body>
+
+</html>
