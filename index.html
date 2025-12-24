@@ -95,7 +95,7 @@
             <label>Password</label>
             <input type="password" placeholder="enter passsword" />
         </div>
-        <button class="button">Log in <a href="notes.html"></a></button>
+        <button onclick="login()" class="button">Log in </button>
         <p>
             Don't have an account? <a href="registrasi.html">Sign up</a>
         </p>
@@ -116,6 +116,9 @@
 
             // if email == usesrDb.email
             alert("Login Berhasil")
+
+             alert("Registrasi Berhasil")
+            window.location.href = './notes.html'
         }
 
         function getfromstorage() {
